@@ -1,0 +1,121 @@
+<html>
+<head>
+<title>USER REGISTRATION</title>
+<style>
+.box{
+     width:70%;
+	 margin:50px auto;
+	 padding:20px;
+	 border:1px solid #ccc;
+	 border-radius:5px;
+	 text-align:center;
+	 display:block;
+	 }
+	 #logform{
+	 display:flex;
+	 align-items:center;
+	 flex-direction:coloumn;
+	 font-size:15px;
+	 font-weight:bold;
+	 }
+	 .queuform{
+	  align-items:left;
+	 }
+	 .input{
+	padding:5px 10px;
+    margin:10px;
+    text-align:center;
+	}
+	.section{
+	display:none;
+	text-align:left;
+	}
+	</style>
+    </head>
+<body>	
+
+<div class="box" id="header">
+<h1>Candidate Login</h1>
+<form name="logform" id="logform">
+<label>reg no.</label>
+<input type="number" name="regno" placeholder="Enter The Registration Number">
+<label>password</label>
+<input type="password" name="pass" placeholder="Enter The Password">
+</form>
+
+<button onclick="examval()">Submit</button>
+</div>
+<div class="box section" id="section">
+<h1>Questions</h1>
+<form name="queform" id="queform">
+
+<label>1.Which Animal Is Known As The "Ship Of The Dessert"?</label>
+<br>
+<input type="radio" name="1" id="">Camel
+<input type="radio" name="1" id="">Dog
+<input type="radio" name="1" id="">Cow
+<input type="radio" name="1" id="">Cat
+<br><br><br>
+
+
+<label>2.How Many Days Are There In A Week?</label>
+<br>
+<input type="radio" name="1" id="">5 Days
+<input type="radio" name="1" id="">6 Days
+<input type="radio" name="1" id="">7 Days
+<input type="radio" name="1" id="">8 Days
+<br><br><br>
+
+
+<label>3.How Many Hours Are There In A Day?</label>
+<br>
+<input type="radio" name="1" id="">12 Hours
+<input type="radio" name="1" id="">14 Hours
+<input type="radio" name="1" id="">22 Hours
+<input type="radio" name="1" id="">24 Hours
+<br><br><br>
+
+
+<label>4.How Many Letters Are There In The English Alphabet?</label>
+<br>
+<input type="radio" name="1" id="">20 Letters
+<input type="radio" name="1" id="">26 Letters
+<input type="radio" name="1" id="">30 Letters
+<input type="radio" name="1" id="">36 Letters
+<br><br><br>
+
+
+<label>5.Rainbow Consist Of How Many Colors?</label>
+<br>
+<input type="radio" name="1" id="">7 Colours
+<input type="radio" name="1" id="">8 Colours
+<input type="radio" name="1" id="">9 Colours
+<input type="radio" name="1" id="">10 Colours
+<br><br><br>
+
+</form>
+<button onclick="login()">Submit</button>
+</div>
+<script>
+function examval(){
+var regno=document.logform.regno.value;
+var pass=document.logform.pass.value;
+console.log(regno);
+console.log(pass);
+
+
+document.getElementById('header').style.display="none"
+document.getElementById('section').style.display="block"
+}
+
+function login(){
+var regno=document.logform.regno.value;
+var pass=document.logform.pass.value;
+console.log(regno);
+console.log(pass);
+alert("registration"+regno+"Congratulations You Are Successfully Finished Your Exam")
+document.getElementById('header').style.display='none';
+}
+</script>
+</body>
+</html>
