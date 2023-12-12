@@ -3,12 +3,12 @@
 <body>
 
 
-<h2>calendar generator</h2>
+<h2>Calendar Generator</h2>
 
 <p>Enter A Year:</p>
 
 <input type="text" id="year" name="year">
-<button onclick="calendar()">generate calendar</button>
+<button onclick="calendar()">Generate Calendar</button>
 
 
 <p id="calendar"></p>
@@ -16,26 +16,26 @@
 <script>
 function calendar(){
      var year=document.getElementById("year").value;
-     var calendar=" ";
-     for(var month = 0; month < 12; month++){
-	  calendar += "<h3>" + new Date(year, month).toLocaleString('default', { month: 'long'}) + "</h3>";
-	  calendar +="<table border='1'><tr><th>sun</th><th>mon</th><th>tue</th><th>wed</th><th>thur</th><th>fri</th><th>sat</th></tr>";
-	  var firstday = new date(year,month, 1).getDay();
-	  var daysInMonth = 32 - new Date(year, month, 32).getDate();
-	  var date = 1;
-	  for(var i = 0; i < 6; i++){
-	      calendar += "<tr>";
-          for(var j = 0; j < 7; j++){
-             if(i === 0 && j < firstday ||	date > daysInMonth) {
-                calendar += "<td></td>";
+	 var calendar=" ";
+	 for(var month = 0; month < 12; month++){
+	     calendar += "<h3>" + new Date(year, month).toLocaleString('default', { month: 'long'}) + "</h3>";
+	     calendar +="<table border='1'><tr><th>sun</th><th>mon</th><th>tue</th><th>wed</th><th>thur</th><th>fri</th><th>sat</th></tr>";
+	     var firstday = new date(year,month, 1).getDay();
+	     var daysInMonth = 32 - new Date(year, month, 32).getDate();
+	     var date = 1;
+	     for(var i = 0; i < 6; i++){
+	         calendar += "<tr>";
+             for(var j = 0; j < 7; j++){
+                  if(i === 0 && j < firstday ||	date > daysInMonth) {
+                         calendar += "<td></td>";
              }else	{			
-			   calendar += "<td>" + date + "</td>";
-			   date++;
+			             calendar += "<td>" + date + "</td>";
+			             date++;
 			 }  
 		}
-        calendar += "</tr>";
+         calendar += "</tr>";
     }
-	calendar += "</table>";
+	   calendar += "</table>";
 	}
     document.getElementById("calendar").innerHTML = calendar;
 }
