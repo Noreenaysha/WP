@@ -16,8 +16,8 @@
 <script>
 function calendar(){
      var year=document.getElementById("year").value;
-	 var calendar=" ";
-	 for(var month = 0; month < 12; month++){
+     var calendar=" ";
+     for(var month = 0; month < 12; month++){
 	  calendar += "<h3>" + new Date(year, month).toLocaleString('default', { month: 'long'}) + "</h3>";
 	  calendar +="<table border='1'><tr><th>sun</th><th>mon</th><th>tue</th><th>wed</th><th>thur</th><th>fri</th><th>sat</th></tr>";
 	  var firstday = new date(year,month, 1).getDay();
